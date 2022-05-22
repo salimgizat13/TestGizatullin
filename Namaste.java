@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class Namaste {
  public static void main(String[] args) {
 
-  System.out.println("Input (Вâîäèòå ÷èñëà îò 1(I) äî 10(X) ÷åðåç ïðîáåë):");
+  System.out.println("Input:");
   Scanner number = new Scanner(System.in);
   Numbers num = new Numbers();
 
@@ -13,20 +13,20 @@ public class Namaste {
   String operationS = array[1];
   String num2 = array[2];
   if (array.length != 3) {
-   System.out.println("throws Exception //ò.ê. ôîðìàò ìàòåìàòè÷åñêîé îïåðàöèè íå óäîâëåòâîðÿåò çàäàíèþ - äâà îïåðàíäà è îäèí îïåðàòîð (+, -, /, *)");
+   System.out.println("Формат математической операции не удовлетворяет заданию - два операнда и один оператор (+, -, /, *)");
   } else {
    num.num1 = num1;
    num.operation = operationS.charAt(0);
    num.num2 = num2;
 
 
-   num.existR();       // êîíâåðòàöèÿ â int äëÿ ðèìñêèõ
+   num.existR();       // конвертация в int для римских
    num.convertIntRo();
    num.existR2();
    num.convertIntRo2();
 
 
-   num.exist();          // êîíâåðòàöèÿ â int äëÿ àðàáñêèõ
+   num.exist();          // конвертация в int для арабских
    num.convertIntAr();
    num.exist2();
    num.convertIntAr2();
@@ -34,17 +34,17 @@ public class Namaste {
 
    if (num.exist() && num.exist2()) {
     System.out.println(num.calculation());
-   } else if (num.exist() && num.existR2()) {          // ïîñìîòðè ëîãè÷åñêèå îïåðàòîðû!!!!
-    System.out.println("throws Exception //ò.ê. èñïîëüçóþòñÿ îäíîâðåìåííî ðàçíûå ñèñòåìû ñ÷èñëåíèÿ");
+   } else if (num.exist() && num.existR2()) {          // посмотри логические операторы!!!!
+    System.out.println("Используются одновременно разные системы счисления");
    } else if (num.exist2() && num.existR()) {
-    System.out.println("throws Exception //ò.ê. èñïîëüçóþòñÿ îäíîâðåìåííî ðàçíûå ñèñòåìû ñ÷èñëåíèÿ");
+    System.out.println("Используются одновременно разные системы счисления");
    } else if (num.existR() && num.existR2()) {
     num.calculation();
     try {
      num.res();
      System.out.println(num.res());
     } catch (ArrayIndexOutOfBoundsException e) {
-     System.out.println("throws Exception //ò.ê. â ðèìñêîé ñèñòåìå íåò îòðèöàòåëüíûõ ÷èñåë è íóëÿ");
+     System.out.println("throws Exception //т.к. в римской системе нет отрицательных чисел и нуля");
     }
 
    }
@@ -152,7 +152,7 @@ class Numbers {
      result = numInt1 / numInt2;
      break;
     default:
-     System.out.print("Âû óêàçàëè íåâåðíóþ îïåðàöèþ");
+     System.out.print("Вы указали неверную операцию");
    }
   return result;
  }
