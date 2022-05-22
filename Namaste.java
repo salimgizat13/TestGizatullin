@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class Namaste {
  public static void main(String[] args) {
 
-  System.out.println("Input (вводите числа от 1(I) до 10(X) через пробел):");
+  System.out.println("Input (Р’ГўГ®Г¤ГЁГІГҐ Г·ГЁГ±Г«Г  Г®ГІ 1(I) Г¤Г® 10(X) Г·ГҐГ°ГҐГ§ ГЇГ°Г®ГЎГҐГ«):");
   Scanner number = new Scanner(System.in);
   Numbers num = new Numbers();
 
@@ -13,20 +13,20 @@ public class Namaste {
   String operationS = array[1];
   String num2 = array[2];
   if (array.length != 3) {
-   System.out.println("throws Exception //т.к. формат математической операции не удовлетворяет заданию - два операнда и один оператор (+, -, /, *)");
+   System.out.println("throws Exception //ГІ.ГЄ. ГґГ®Г°Г¬Г ГІ Г¬Г ГІГҐГ¬Г ГІГЁГ·ГҐГ±ГЄГ®Г© Г®ГЇГҐГ°Г Г¶ГЁГЁ Г­ГҐ ГіГ¤Г®ГўГ«ГҐГІГўГ®Г°ГїГҐГІ Г§Г Г¤Г Г­ГЁГѕ - Г¤ГўГ  Г®ГЇГҐГ°Г Г­Г¤Г  ГЁ Г®Г¤ГЁГ­ Г®ГЇГҐГ°Г ГІГ®Г° (+, -, /, *)");
   } else {
    num.num1 = num1;
    num.operation = operationS.charAt(0);
    num.num2 = num2;
 
 
-   num.existR();       // конвертация в int для римских
+   num.existR();       // ГЄГ®Г­ГўГҐГ°ГІГ Г¶ГЁГї Гў int Г¤Г«Гї Г°ГЁГ¬Г±ГЄГЁГµ
    num.convertIntRo();
    num.existR2();
    num.convertIntRo2();
 
 
-   num.exist();          // конвертация в int для арабских
+   num.exist();          // ГЄГ®Г­ГўГҐГ°ГІГ Г¶ГЁГї Гў int Г¤Г«Гї Г Г°Г ГЎГ±ГЄГЁГµ
    num.convertIntAr();
    num.exist2();
    num.convertIntAr2();
@@ -34,17 +34,17 @@ public class Namaste {
 
    if (num.exist() && num.exist2()) {
     System.out.println(num.calculation());
-   } else if (num.exist() && num.existR2()) {          // посмотри логические операторы!!!!
-    System.out.println("throws Exception //т.к. используются одновременно разные системы счисления");
+   } else if (num.exist() && num.existR2()) {          // ГЇГ®Г±Г¬Г®ГІГ°ГЁ Г«Г®ГЈГЁГ·ГҐГ±ГЄГЁГҐ Г®ГЇГҐГ°Г ГІГ®Г°Г»!!!!
+    System.out.println("throws Exception //ГІ.ГЄ. ГЁГ±ГЇГ®Г«ГјГ§ГіГѕГІГ±Гї Г®Г¤Г­Г®ГўГ°ГҐГ¬ГҐГ­Г­Г® Г°Г Г§Г­Г»ГҐ Г±ГЁГ±ГІГҐГ¬Г» Г±Г·ГЁГ±Г«ГҐГ­ГЁГї");
    } else if (num.exist2() && num.existR()) {
-    System.out.println("throws Exception //т.к. используются одновременно разные системы счисления");
+    System.out.println("throws Exception //ГІ.ГЄ. ГЁГ±ГЇГ®Г«ГјГ§ГіГѕГІГ±Гї Г®Г¤Г­Г®ГўГ°ГҐГ¬ГҐГ­Г­Г® Г°Г Г§Г­Г»ГҐ Г±ГЁГ±ГІГҐГ¬Г» Г±Г·ГЁГ±Г«ГҐГ­ГЁГї");
    } else if (num.existR() && num.existR2()) {
     num.calculation();
     try {
      num.res();
      System.out.println(num.res());
     } catch (ArrayIndexOutOfBoundsException e) {
-     System.out.println("throws Exception //т.к. в римской системе нет отрицательных чисел и нуля");
+     System.out.println("throws Exception //ГІ.ГЄ. Гў Г°ГЁГ¬Г±ГЄГ®Г© Г±ГЁГ±ГІГҐГ¬ГҐ Г­ГҐГІ Г®ГІГ°ГЁГ¶Г ГІГҐГ«ГјГ­Г»Гµ Г·ГЁГ±ГҐГ« ГЁ Г­ГіГ«Гї");
     }
 
    }
@@ -152,7 +152,7 @@ class Numbers {
      result = numInt1 / numInt2;
      break;
     default:
-     System.out.print("Вы указали неверную операцию");
+     System.out.print("Г‚Г» ГіГЄГ Г§Г Г«ГЁ Г­ГҐГўГҐГ°Г­ГіГѕ Г®ГЇГҐГ°Г Г¶ГЁГѕ");
    }
   return result;
  }
