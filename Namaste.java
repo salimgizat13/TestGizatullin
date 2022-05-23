@@ -9,12 +9,14 @@ public class Namaste {
   Numbers num = new Numbers();
 
   String[] array = number.nextLine().split(" ");
-  String num1 = array[0];
-  String operationS = array[1];
-  String num2 = array[2];
   if (array.length != 3) {
    System.out.println("Формат математической операции не удовлетворяет заданию - два операнда и один оператор (+, -, /, *)");
   } else {
+   
+   String num1 = array[0];
+   String operationS = array[1];
+   String num2 = array[2];
+  
    num.num1 = num1;
    num.operation = operationS.charAt(0);
    num.num2 = num2;
